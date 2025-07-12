@@ -1,10 +1,10 @@
 const messages = [
-  "ก่อนเริ่มผมนั่งเขียนแล้วก็แก้โค้ดอยู่ชม.กว่า\nฉะนั้นดูให้จบด้วยย",
-  "ผมคิดว่าผมมีอะไรจะบอกคุณ",
-  "ไม่รู้ว่าคุณจะคิดยังไงนะ",
-  "แต่ว่าสิ่งที่ผมอยากจะบอกคุณคือ...",
-  "ไอแมวอ้วนนนนน"
-];
+"ก่อนเริ่มผมนั่งเขียนแล้วก็แก้โค้ดอยู่ชม.กว่า\nฉะนั้นดูให้จบด้วยย",
+"ผมคิดว่าผมมีอะไรจะบอกคุณ",
+"ไม่รู้ว่าคุณจะคิดยังไงนะ",
+"แต่ว่าสิ่งที่ผมอยากจะบอกคุณคือ...",
+"ไอแมวอ้วนนนนน"];
+
 
 let current = 0;
 const box = document.getElementById("messageBox");
@@ -28,7 +28,7 @@ function typeWriter(text, i = 0) {
     typingTimeout = setTimeout(() => typeWriter(text, i + 1), 50);
   } else {
     isTyping = false;
-    if(current === messages.length - 1) {
+    if (current === messages.length - 1) {
       createLargeSakura(10);
       createBurstSakura(30);
       createBurstHeart(15);
@@ -52,7 +52,7 @@ function showMessage(index) {
   box.style.color = colors[index % colors.length];
   box.style.animation = "fadeInSlide 0.6s ease forwards";
   current = index;
-  
+
   nextBtn.disabled = current === messages.length - 1;
   prevBtn.disabled = current === 0;
 }
@@ -140,8 +140,8 @@ function createLargeSakura(count = 5) {
     sakura.classList.add("sakura-large");
     sakura.textContent = "🌸";
 
-    sakura.style.left = (window.innerWidth * Math.random()) + "px";
-    sakura.style.top = (window.innerHeight - 100) + "px";
+    sakura.style.left = window.innerWidth * Math.random() + "px";
+    sakura.style.top = window.innerHeight - 100 + "px";
 
     document.body.appendChild(sakura);
 
@@ -156,7 +156,7 @@ function createSakura() {
   sakura.textContent = "🌸";
 
   sakura.style.left = Math.random() * 100 + "vw";
-  sakura.style.animationDuration = (5 + Math.random() * 5) + "s";
+  sakura.style.animationDuration = 5 + Math.random() * 5 + "s";
 
   document.body.appendChild(sakura);
 
